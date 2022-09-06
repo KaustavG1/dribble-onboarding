@@ -1,14 +1,20 @@
 import styled from 'styled-components'
 
-const StyledDiv = styled.div`
-  background-color: red;
+import Container from './components/Container/Container'
+
+const StyledBackground = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 function App() {
   return (
-    <StyledDiv>
-      Hello World
-    </StyledDiv>
+    <StyledBackground>
+      <Container />
+    </StyledBackground>
   );
 }
 
