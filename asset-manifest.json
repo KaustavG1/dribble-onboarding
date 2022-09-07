@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dribble-onboarding/static/css/main.bc4efb67.css",
+    "main.js": "/dribble-onboarding/static/js/main.e7b7a621.js",
+    "index.html": "/dribble-onboarding/index.html",
+    "main.bc4efb67.css.map": "/dribble-onboarding/static/css/main.bc4efb67.css.map",
+    "main.e7b7a621.js.map": "/dribble-onboarding/static/js/main.e7b7a621.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc4efb67.css",
+    "static/js/main.e7b7a621.js"
+  ]
+}
