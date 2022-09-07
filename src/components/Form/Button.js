@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   color: #ded8fa;
 `
 
-function Button({ text, ...props}) {
+function Button({ text, ...props }) {
 
   return (
     <StyledButton {...props}>{text}</StyledButton>

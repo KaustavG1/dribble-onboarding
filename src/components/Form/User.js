@@ -5,9 +5,9 @@ const StyledUserWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 180px;
+  height: 150px;
   width: 200px;
-  border: ${({active}) => active ? '1px solid #664de5' : '1px solid rgba(169, 175, 189, 0.5)'};
+  border: ${({ active }) => active ? '1px solid #664de5' : '1px solid rgba(169, 175, 189, 0.5)'};
   border-radius: 5px;
   padding: 20px;
 `
@@ -18,8 +18,8 @@ const StyledIcon = styled.div`
 
 const StyledText = styled.div`
   line-height: 1.4;
-  font-size: ${({fontSize}) => fontSize};
-  color: ${({color}) => color};
+  font-size: ${({ fontSize }) => fontSize};
+  color: ${({ color }) => color};
 
 `
 

@@ -11,7 +11,7 @@ const StyledOptionalText = styled.span`
   color: #8c96a8;
 `
 
-function Label({ text, optionalText, children, ...props}) {
+function Label({ text, optionalText, children, ...props }) {
 
   return (
     <StyledLabel {...props}>

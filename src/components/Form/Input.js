@@ -5,10 +5,10 @@ const StyledInput = styled.input`
   border: 1px solid rgba(169, 175, 189, 0.5);
   color: #151b28;
 
-  border-radius: ${({isGroup}) => isGroup ? '0px 5px 5px 0px' : '5px'};
-  position: ${({type}) => type === 'radio' ? 'absolute' : 'static'};
-  height: ${({type}) => type === 'radio' ? '1px' : ''};
-  width: ${({stretch, type}) => {
+  border-radius: ${({ isGroup }) => isGroup ? '0px 5px 5px 0px' : '5px'};
+  position: ${({ type }) => type === 'radio' ? 'absolute' : 'static'};
+  height: ${({ type }) => type === 'radio' ? '1px' : ''};
+  width: ${({ stretch, type }) => {
     if (type === 'radio') {
       return '1px'
     }

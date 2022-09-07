@@ -18,7 +18,7 @@ const StyledDomain = styled.span`
   border-radius: 5px 0px 0px 5px;
 `
 
-function URLInput({domainText, ...props}) {
+function URLInput({ domainText, ...props }) {
 
   return (
     <StyledInputGroup>

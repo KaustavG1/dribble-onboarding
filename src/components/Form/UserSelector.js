@@ -21,7 +21,7 @@ function UserSelector({ handleChange, checked }) {
         checked={checked === "myself"}
         onChange={handleChange}
       />
-      <Label for="myself">
+      <Label htmlFor="myself">
         <User
           icon={"&#9823;"}
           header={"For myself"}
@@ -38,7 +38,7 @@ function UserSelector({ handleChange, checked }) {
         checked={checked === "team"}
         onChange={handleChange}
       />
-      <Label for="team">
+      <Label htmlFor="team">
         <User
           icon={"&#9823;"}
           header={"With my team"}
