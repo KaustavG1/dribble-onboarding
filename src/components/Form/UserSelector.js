@@ -2,7 +2,9 @@ import styled from 'styled-components'
 
 import Input from './Input'
 import Label from './Label'
+import myself_active from '../../assets/Myself_active.png';
 import myself from '../../assets/Myself.png';
+import team_active from '../../assets/Team_active.png';
 import team from '../../assets/Team.png';
 import User from './User'
 
@@ -28,7 +30,7 @@ function UserSelector({ handleChange, checked }) {
           header={"For myself"}
           content={"Write better. Think more clearly. Stay organized."}
           active={checked === "myself"}
-          src={myself}
+          src={checked === "myself" ? myself_active : myself}
         />
       </Label>
       <br/>
@@ -45,7 +47,7 @@ function UserSelector({ handleChange, checked }) {
           header={"With my team"}
           content={"Wikis, docs, tasks & projects, all in one place."}
           active={checked === "team"}
-          src={team}
+          src={checked === "team" ? team_active : team}
         />
       </Label>
     </StyledSelector>
