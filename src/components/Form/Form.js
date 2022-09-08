@@ -31,7 +31,7 @@ function Form({ currentStep, nextStep, steps }) {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, []);
+  }, [ nextStep ]);
 
   return (
     <StyledForm>
