@@ -21,14 +21,14 @@ const StyledInput = styled.input`
   }};
 
   &:focus {
-    outline: none;
+    outline-color: #664de5;
   }
 `
 
 function Input(props) {
 
   return (
-    <StyledInput {...props} />
+    <StyledInput {...props}/>
   )
 }
 

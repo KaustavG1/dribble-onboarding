@@ -93,6 +93,7 @@ function Container() {
             placeholder="Steve Jobs"
             onChange={handleFullName}
             value={fullName}
+            required={true}
           />
           <br/>
           <Label htmlFor="dname" text={"Display name"}/>
@@ -102,6 +103,7 @@ function Container() {
             placeholder="Steve"
             onChange={handleDisplayName}
             value={displayName}
+            required
           />
         </>
       )

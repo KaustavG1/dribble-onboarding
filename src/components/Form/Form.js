@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import styled from 'styled-components'
 
 import Button from './Button'
@@ -10,12 +11,27 @@ const StyledForm = styled.form`
 `
 
 function Form({ currentStep, nextStep, steps }) {
-  const handleClick = (event) => {
+  const handleClick = event => {
     event.preventDefault();
     nextStep()
   }
 
   const buttonText =  (currentStep === TOTAL_STEPS) ? "Launch Eden" : "Create Workspace"
+
+  useEffect(() => {
+    const handleKeyPress = event => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        nextStep()
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
 
   return (
     <StyledForm>
