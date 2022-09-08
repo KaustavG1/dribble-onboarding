@@ -19,7 +19,6 @@ const StyledDomain = styled.span`
 `
 
 function URLInput({ domainText, ...props }) {
-
   return (
     <StyledInputGroup>
       <StyledDomain>{domainText}</StyledDomain>

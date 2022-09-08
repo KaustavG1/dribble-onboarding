@@ -9,7 +9,6 @@ const StyledButton = styled.button`
 `
 
 function Button({ text, ...props }) {
-
   return (
     <StyledButton {...props}>{text}</StyledButton>
   )

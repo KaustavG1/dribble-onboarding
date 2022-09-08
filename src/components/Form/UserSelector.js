@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 import Input from './Input'
 import Label from './Label'
-import myself_active from '../../assets/Myself_active.png';
 import myself from '../../assets/Myself.png';
-import team_active from '../../assets/Team_active.png';
+import myself_active from '../../assets/Myself_active.png';
 import team from '../../assets/Team.png';
+import team_active from '../../assets/Team_active.png';
 import User from './User'
 
 const StyledSelector = styled.div`

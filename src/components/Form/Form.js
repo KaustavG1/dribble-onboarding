@@ -16,7 +16,7 @@ function Form({ currentStep, nextStep, steps }) {
     nextStep()
   }
 
-  const buttonText =  (currentStep === TOTAL_STEPS) ? "Launch Eden" : "Create Workspace"
+  const buttonText = (currentStep === TOTAL_STEPS) ? "Launch Eden" : "Create Workspace"
 
   useEffect(() => {
     const handleKeyPress = event => {

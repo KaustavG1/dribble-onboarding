@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 
 import complete from '../../assets/Complete.png'
+import ErrorToast from '../ErrorToast/ErrorToast'
 import Form from '../Form/Form'
 import Header from '../TextComponent/Header'
 import Input from '../Form/Input'
@@ -37,6 +38,7 @@ export const TOTAL_STEPS = 4
 
 function Container() {
   const [ currentStep, setCurrentStep ] = useState(1)
+  const [ isFieldEmpty, setFieldEmpty ] = useState(false)
 
   const {
     fullName,
@@ -51,24 +53,48 @@ function Container() {
     setUser
   } = useForm("", "", "", "", "myself")
 
-  const handleFullName = (event) => {
+  const openToast = () => setFieldEmpty(true)
+  const closeToast = () => setFieldEmpty(false)
+
+  const handleFullName = event => {
+    closeToast()
     setFullName(event.target.value)
   }
-  const handleDisplayName = (event) => {
+  const handleDisplayName = event => {
+    closeToast()
     setDisplayName(event.target.value)
   }
-  const handleWorkspaceName = (event) => {
+  const handleWorkspaceName = event => {
+    closeToast()
     setWorkspaceName(event.target.value)
   }
-  const handleWorkspaceURL = (event) => {
+  const handleWorkspaceURL = event => {
+    closeToast()
     setWorkspaceURL(event.target.value)
   }
-  const handleUser = (event) => {
+  const handleUser = event => {
+    closeToast()
     setUser(event.target.value)
   }
 
+  const validateStep = () => {
+    switch(currentStep) {
+      case 1:
+        return Boolean(fullName && displayName)
+      case 2:
+        return Boolean(workspaceName && workspaceURL)
+      default:
+        return true
+    }
+  }
+
   const updateStep = () => {
-    if(currentStep + 1 > TOTAL_STEPS) {
+    if (!validateStep()) {
+      openToast()
+
+      return
+    }
+    if (currentStep + 1 > TOTAL_STEPS) {
       return
     }
 
@@ -165,14 +191,16 @@ function Container() {
   ]
 
   return (
-    <StyledContainer>
-      <Logo/>
-      <Stepper currentStep={currentStep} steps={stepConfig}/>
-      {/* {currentStep === TOTAL_STEPS && <CompletionStatus>L</CompletionStatus>} */}
-      {currentStep === TOTAL_STEPS && <CompletionStatus src={complete}/>}
-      <TextComponent currentStep={currentStep} steps={stepConfig}/>
-      <Form currentStep={currentStep} nextStep={updateStep} steps={stepConfig}/>
-    </StyledContainer>
+    <>
+      {isFieldEmpty && <ErrorToast close={closeToast}>All fields are mandatory.</ErrorToast>}
+      <StyledContainer>
+        <Logo/>
+        <Stepper currentStep={currentStep} steps={stepConfig}/>
+        {currentStep === TOTAL_STEPS && <CompletionStatus src={complete}/>}
+        <TextComponent currentStep={currentStep} steps={stepConfig}/>
+        <Form currentStep={currentStep} nextStep={updateStep} steps={stepConfig}/>
+      </StyledContainer>
+    </>
   )
 }
 
