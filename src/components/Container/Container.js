@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 
+import complete from '../../assets/Complete.png'
 import Form from '../Form/Form'
 import Header from '../TextComponent/Header'
 import Input from '../Form/Input'
@@ -12,7 +13,6 @@ import TextComponent from '../TextComponent/TextComponent'
 import URLInput from '../Form/URLInput'
 import useForm from '../../hooks/useForm'
 import UserSelector from '../Form/UserSelector'
-
 
 const StyledContainer = styled.div`
   overflow: hidden;
@@ -28,15 +28,9 @@ const StyledContainer = styled.div`
   }
 `
 
-const CompletionStatus = styled.div`
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #664de5;
-  color: #ded8fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const CompletionStatus = styled.img`
+  height: 55px;
+  width: 55px;
 `
 
 export const TOTAL_STEPS = 4
@@ -172,7 +166,8 @@ function Container() {
     <StyledContainer>
       <Logo/>
       <Stepper currentStep={currentStep} steps={stepConfig}/>
-      {currentStep === TOTAL_STEPS && <CompletionStatus>L</CompletionStatus>}
+      {/* {currentStep === TOTAL_STEPS && <CompletionStatus>L</CompletionStatus>} */}
+      {currentStep === TOTAL_STEPS && <CompletionStatus src={complete}/>}
       <TextComponent currentStep={currentStep} steps={stepConfig}/>
       <Form currentStep={currentStep} nextStep={updateStep} steps={stepConfig}/>
     </StyledContainer>

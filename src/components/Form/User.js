@@ -12,8 +12,9 @@ const StyledUserWrapper = styled.div`
   padding: 20px;
 `
 
-const StyledIcon = styled.div`
-  font-size: 24px;
+const StyledIcon = styled.img`
+  height: 20px;
+  width: 20px;
 `
 
 const StyledText = styled.div`
@@ -23,10 +24,10 @@ const StyledText = styled.div`
 
 `
 
-function User({ icon, header, content, active }) {
+function User({ header, content, active, src }) {
   return (
     <StyledUserWrapper active={active}>
-      <StyledIcon>{icon}</StyledIcon>
+      <StyledIcon src={src}/>
       <StyledText fontSize="14px" color="#151b28">{header}</StyledText>
       <StyledText fontSize="11px" color="#8c96a8">{content}</StyledText>
     </StyledUserWrapper>

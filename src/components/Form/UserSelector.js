@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 import Input from './Input'
 import Label from './Label'
+import myself from '../../assets/Myself.png';
+import team from '../../assets/Team.png';
 import User from './User'
 
 const StyledSelector = styled.div`
@@ -23,10 +25,10 @@ function UserSelector({ handleChange, checked }) {
       />
       <Label htmlFor="myself">
         <User
-          icon={"&#9823;"}
           header={"For myself"}
           content={"Write better. Think more clearly. Stay organized."}
           active={checked === "myself"}
+          src={myself}
         />
       </Label>
       <br/>
@@ -40,10 +42,10 @@ function UserSelector({ handleChange, checked }) {
       />
       <Label htmlFor="team">
         <User
-          icon={"&#9823;"}
           header={"With my team"}
           content={"Wikis, docs, tasks & projects, all in one place."}
           active={checked === "team"}
+          src={team}
         />
       </Label>
     </StyledSelector>
